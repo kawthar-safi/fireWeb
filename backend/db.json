@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "KAMAKAZI BURGER",
+      "description": "Meat lovers go too! 2*150 grams with sweet chilli sauce, caramelised onions and firefly sauce making this a well-known meal for any Firefly fan",
+      "price": 5,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746876437/kamakazi_g6ip1l.png"
+    },
+    {
+      "id": "2",
+      "name": "ANGUS BURGER ",
+      "description": "A bit smoky! 200 grams of angus burger, bacon, smoked cheese, and firefly sauce. ",
+      "price": 3.5,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746876400/D8_B3_D8_A8_D8_A4_hygf91.png"
+    },
+    {
+      "id": "3",
+      "name": "KETO BEEF",
+      "description": "On a diet? We got you, 150 grams of fresh meat with keto buns, you can Firefly on a diet!  ",
+      "price": 3,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746876115/keto-beef_tnliuf.png"
+    },
+    {
+      "id": "4",
+      "name": "FIREFLY BURGER",
+      "description": "Our signature! 150 grams of the finest meat with beef bacon, caramelised onions, pickles, and our secret firefly sauce, making it a meal to remember, try it, and don’t keep it a secret.  ",
+      "price": 5,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746876328/MYSTIC_npce8u.png"
+    },
+    {
+      "id": "5",
+      "name": "BACKFIRE",
+      "description": "A spicy head? This one's for you! Injected with hot sauce 2*150 grams of fresh meat mixed with chilli, chilli sauce lava, and finishing off with jalapeños.   ",
+      "price": 4.5,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746876060/EWG_qjfn7i.png"
+    },
+    {
+      "id": "6",
+      "name": "EGG BACON ",
+      "description": "The original American style, egg, bacon, caramelized onions, cheddar cheese, and the fresh beef patty make it a rich meal to satisfy your cravings.  ",
+      "price": 5,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746901391/buck-chic_g9vz5m.png"
+    },
+    {
+      "id": "d383",
+      "name": "test",
+      "price": "22",
+      "description": "dfffffffffffffffffffff",
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746901391/buck-chic_g9vz5m.png"
+    },
+    {
+      "id": "633f",
+      "name": "hhhhhhh",
+      "price": "777",
+      "description": "kkkkkkkkkkkkkkkkkkkkkkkkkkj",
+      "image": "jjjjjjj"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "myadmin",
+      "email": "admin@gmail.com",
+      "password": "admin123"
+    },
+    {
+      "id": "31cd",
+      "firstname": "asdfgthuj",
+      "lastname": "dfghjk",
+      "phoneNumber": 1234567,
+      "email": "sdfghjk@dfghj",
+      "password": "w3456789"
+    },
+    {
+      "id": "5820",
+      "firstname": "asdfghj",
+      "lastname": "sdfghjkl",
+      "phoneNumber": 12345678,
+      "email": "sdfghjk@rtghyjk",
+      "password": "sdfghjl"
+    },
+    {
+      "id": "b582",
+      "firstname": "dfghjk",
+      "lastname": "ertyuio",
+      "phoneNumber": 234567,
+      "email": "ertyui@tgyuio",
+      "password": "sdfghjkl"
+    },
+    {
+      "id": "89aa",
+      "firstname": "kawthar",
+      "lastname": "safi",
+      "phoneNumber": 782442297,
+      "email": "kawtharsafi@gmail.com",
+      "password": "1182001"
+    }
+  ]
+}

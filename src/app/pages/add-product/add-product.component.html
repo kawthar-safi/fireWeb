@@ -1,0 +1,40 @@
+<div class="container">
+  <form [formGroup]="AddProducte" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="image" placeholder="imageUrl" />
+
+    <input type="text" formControlName="name" placeholder="name" />
+
+    <small *ngIf="AddProducte.get('name')?.errors?.['minlength']">
+      name must be at least 3 characters
+    </small>
+
+    <input type="price" formControlName="price" placeholder="price" />
+
+    <small *ngIf="AddProducte.get('price')?.errors?.['required']"
+      >price is required</small
+    >
+
+    <input
+      type="text"
+      formControlName="description"
+      placeholder="description"
+    />
+    <div
+      *ngIf="
+        AddProducte.get('description')?.invalid &&
+        AddProducte.get('description')?.touched
+      "
+    >
+      <small *ngIf="AddProducte.get('description')?.errors?.['required']"
+        >description is required</small
+      >
+      <small *ngIf="AddProducte.get('description')?.errors?.['minlength']">
+        description must be at least 6 characters
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="AddProducte.invalid">Add Product</button>
+  </form>
+</div>
+
+<!-- [placeholder]="'login.username' | translate" -->

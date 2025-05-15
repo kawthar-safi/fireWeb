@@ -1,0 +1,32 @@
+<div class="header">
+  <div class="logo-container">
+    <img
+      src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1746899760/logo-2_eprvqp.png"
+      alt="Firefly Logo"
+      class="logo"
+    />
+
+    <!-- 🔴 إذا المستخدم مش مسجّل دخول -->
+    <a *ngIf="!isLoggedIn" [routerLink]="['/login']" class="login-button">
+      {{ "login.button" | translate }}
+    </a>
+
+    <!-- 🟢 إذا المستخدم مسجّل دخول -->
+    <div *ngIf="isLoggedIn" class="user-info">
+      <span class="username"> 👋 {{ username }}</span>
+      <a (click)="logout()" class="login-button">Logout</a>
+    </div>
+  </div>
+
+  <a [routerLink]="['/']" class="header-title">
+    {{ "header.title" | translate }}
+  </a>
+
+  <div class="cart-container">
+    <a (click)="gotoAddProduct()" class="login-button">Add Product</a>
+    <button (click)="goToCart()">
+      <i class="ri-shopping-cart-line"></i>
+      <span class="cart-count">{{ cartCount }}</span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div *ngIf="product" class="housing-card">
+    <div class="housing-details">
+      <div class="image">
+        <img [src]="product.image" alt="{{ product.name }}" />
+        <h1 class="product-name">{{ product.name }}</h1>
+      </div>
+
+      <p>
+        <span class="label">{{ "details.price" | translate }}:</span>
+        <span class="value">{{ product.price }}$</span>
+      </p>
+
+      <p>
+        <span class="label">{{ "details.description" | translate }}:</span>
+        <span class="value">{{ product.description }}</span>
+      </p>
+
+      <button class="cart-button" (click)="goToCart()">
+        {{ "details.button" | translate }}
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+    <form [formGroup]="quantityForm">
+      <label for="quantity">الكمية:</label>
+      <input type="number" id="quantity" formControlName="quantity" min="1" />
+    </form>
+  </div>
+</div>

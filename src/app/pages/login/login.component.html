@@ -1,0 +1,62 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input
+      type="username"
+      formControlName="username"
+      [placeholder]="'login.username' | translate"
+    />
+    <div
+      *ngIf="
+        loginForm.get('username')?.invalid && loginForm.get('username')?.touched
+      "
+    >
+      <small *ngIf="loginForm.get('username')?.errors?.['required']"
+        >Username is required</small
+      >
+      <small *ngIf="loginForm.get('username')?.errors?.['minlength']">
+        Username must be at least 3 characters
+      </small>
+    </div>
+    <input
+      type="email"
+      formControlName="email"
+      [placeholder]="'login.email' | translate"
+    />
+    <div
+      *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+    >
+      <small *ngIf="loginForm.get('email')?.errors?.['required']"
+        >Email is required</small
+      >
+      <small *ngIf="loginForm.get('email')?.errors?.['email']"
+        >Invalid email format</small
+      >
+    </div>
+
+    <input
+      type="password"
+      formControlName="password"
+      [placeholder]="'login.password' | translate"
+    />
+    <div
+      *ngIf="
+        loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+      "
+    >
+      <small *ngIf="loginForm.get('password')?.errors?.['required']"
+        >Password is required</small
+      >
+      <small *ngIf="loginForm.get('password')?.errors?.['minlength']">
+        Password must be at least 6 characters
+      </small>
+    </div>
+    <a [routerLink]="['/create-account']" (click)="createAccount()">
+      {{ "login.button2" | translate }}
+    </a>
+
+    <button type="submit" [disabled]="loginForm.invalid">
+      {{ "login.button" | translate }}
+    </button>
+  </form>
+</div>
+<p-toast></p-toast>

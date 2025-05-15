@@ -1,0 +1,84 @@
+<div class="container">
+  <form [formGroup]="signUp" (ngSubmit)="signUpFun()">
+    <input
+      type="text"
+      formControlName="firstname"
+      [placeholder]="'signin.firstname' | translate"
+    />
+    <div
+      *ngIf="
+        signUp.get('firstname')?.invalid && signUp.get('firstname')?.touched
+      "
+    >
+      <small *ngIf="signUp.get('firstname')?.errors?.['required']"
+        >firstname is required</small
+      >
+      <small *ngIf="signUp.get('firstname')?.errors?.['minlength']">
+        firstname must be at least 3 characters
+      </small>
+    </div>
+    <input
+      type="text"
+      formControlName="lastname"
+      [placeholder]="'signin.lastname' | translate"
+    />
+    <div
+      *ngIf="signUp.get('lastname')?.invalid && signUp.get('lastname')?.touched"
+    >
+      <small *ngIf="signUp.get('lastname')?.errors?.['required']"
+        >lastname is required</small
+      >
+      <small *ngIf="signUp.get('lastname')?.errors?.['minlength']">
+        lastname must be at least 3 characters
+      </small>
+    </div>
+    <input
+      type="email"
+      formControlName="email"
+      [placeholder]="'login.email' | translate"
+    />
+    <div *ngIf="signUp.get('email')?.invalid && signUp.get('email')?.touched">
+      <small *ngIf="signUp.get('email')?.errors?.['required']"
+        >Email is required</small
+      >
+      <small *ngIf="signUp.get('email')?.errors?.['email']"
+        >Invalid email format</small
+      >
+    </div>
+    <input
+      type="number"
+      formControlName="phoneNumber"
+      [placeholder]="'signin.phoneNumber' | translate"
+    />
+    <div
+      *ngIf="
+        signUp.get('phoneNumber')?.invalid && signUp.get('phoneNumber')?.touched
+      "
+    >
+      <small *ngIf="signUp.get('phoneNumber')?.errors?.['required']"
+        >Phone Number is required</small
+      >
+    </div>
+
+    <input
+      type="password"
+      formControlName="password"
+      [placeholder]="'login.password' | translate"
+    />
+    <div
+      *ngIf="signUp.get('password')?.invalid && signUp.get('password')?.touched"
+    >
+      <small *ngIf="signUp.get('password')?.errors?.['required']"
+        >Password is required</small
+      >
+      <small *ngIf="signUp.get('password')?.errors?.['minlength']">
+        Password must be at least 6 characters
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="signUp.invalid">
+      {{ "login.button2" | translate }}
+    </button>
+  </form>
+</div>
+<p-toast></p-toast>

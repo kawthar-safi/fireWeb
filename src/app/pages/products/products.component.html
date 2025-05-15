@@ -1,0 +1,19 @@
+<div class="housing-list">
+  @for (pro of Product; track pro.id) {
+  <!-- هلا بنحط كل عنصر -->
+  <div class="housing-card">
+    <img [src]="pro.image" alt="{{ pro.name }}" />
+    <div class="housing-details">
+      <h3>{{ pro.name }}</h3>
+      <p>{{ "details.price" | translate }}: {{ pro.price }}$</p>
+      <!-- هون الرابط بوديني على صفحة التفاصيل بناءا على id كل عنصر -->
+      <a
+        [routerLink]="['/details', pro.id]"
+        routerLinkActive="router-link-active"
+      >
+        {{ "details.View Details" | translate }}
+      </a>
+    </div>
+  </div>
+  }
+</div>

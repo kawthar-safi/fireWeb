@@ -1,0 +1,30 @@
+.app-footer {
+  background-color: #222;
+  color: #e9c664;
+  padding: 15px 20px;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.lang-switch a {
+  color: #e9c664;
+  text-decoration: none;
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.lang-switch a:hover {
+  color: #fff;
+}

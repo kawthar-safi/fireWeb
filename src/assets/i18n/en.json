@@ -1,0 +1,31 @@
+{
+  "app": {
+    "title": "store"
+  },
+  "header": {
+    "title": "FireFly"
+  },
+  "details": {
+    "price": "Price",
+    "description": "Description",
+    "View Details": "View Details",
+    "button": "Add to Cart"
+  },
+  "login": {
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "button": "Login",
+    "button2": "Create Account"
+  },
+  "signin": {
+    "firstname": " First Name",
+    "lastname": "Last Name ",
+    "phoneNumber": "Phone Number "
+  },
+  "cart": {
+    "cart": "Empty Cart",
+
+    "dis": "Start shopping and add products to your cart"
+  }
+}
