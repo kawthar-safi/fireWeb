@@ -67,20 +67,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000; // لون خفيف للصفحة
+  background-image: url("https://res.cloudinary.com/ddsrofo4o/image/upload/v1747396761/WhatsApp_Image_2025-05-13_at_3.17.16_PM_yo97wo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .cart-container {
   padding: 20px;
   max-width: 800px;
-  width: 100%; // يخلي البوكس متجاوب
-  background-image: url("/assets/i18n/images/logo.jpeg");
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); // خلفية شبه شفافة غامقة
+  color: rgba(255, 255, 255, 0.779);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px); // تأثير بلور للصورة تحت
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-family: "Courier New", Courier, monospace;
 }
+
 .cart-item {
+  font-family: "Courier New", Courier, monospace;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,6 +107,7 @@
   }
 
   button {
+    font-family: "Courier New", Courier, monospace;
     background-color: #e74c3c;
     color: #fff;
     border: none;
@@ -115,6 +122,7 @@
 }
 
 .cart-summary {
+  font-family: "Courier New", Courier, monospace;
   margin-top: 20px;
   text-align: right;
 
@@ -123,24 +131,28 @@
   }
 
   button {
+    font-family: "Courier New", Courier, monospace;
     background-color: #555;
     color: #fff;
     padding: 10px 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
-    &:hover {
-      background-color: #333;
-    }
   }
 }
 
 .empty-cart {
+  font-size: 24px;
+  background-image: linear-gradient(to right, #150909a0, #000000, #1a1a1a4d);
   text-align: center;
   padding: 40px;
-  color: #777;
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .cart-container {
   padding: 20px;
   max-width: 800px;

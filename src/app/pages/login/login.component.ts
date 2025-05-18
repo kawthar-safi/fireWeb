@@ -26,14 +26,18 @@ import { Users } from '../../models/users';
 export class LoginComponent {
   returnUrl: string = '/';
   loginForm = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
+    // username: new FormControl('', [
+    //   Validators.required,
+    //   Validators.minLength(3),
+    // ]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
+    ]),
+    role: new FormControl('User', [
+      Validators.required,
+      Validators.minLength(3),
     ]),
   });
 
@@ -51,29 +55,32 @@ export class LoginComponent {
   onSubmit() {
     this.http.get<Users[]>('http://localhost:3001/users').subscribe((res) => {
       const user = res.find(
-        (a: Users) => a.email === this.loginForm.value.email
+        (a: Users) =>
+          a.email === this.loginForm.value.email &&
+          a.password === this.loginForm.value.password
       );
 
       if (user) {
-        this.authService.login(); // أولاً نعلن عن حالة الدخول
-        this.authService.setUsername(user.username); // ثم نحدث اسم المستخدم
+        this.authService.login();
+        this.authService.emitUsername(user.username);
+
+        this.authService.setUserRole(user.role);
         localStorage.setItem('userId', user.id.toString());
 
         this.messageService.add({
           severity: 'success',
           summary: 'Success',
-          detail: 'Welcome',
+          detail: `Welcome ${user.username}`,
         });
 
         const redirectUrl = this.authService.getRedirectUrl() || '/';
         this.router.navigateByUrl(redirectUrl);
-
         this.loginForm.reset();
       } else {
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
-          detail: 'Please create an account',
+          detail: 'Invalid email or password',
         });
       }
     });

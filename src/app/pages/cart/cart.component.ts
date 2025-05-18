@@ -7,11 +7,12 @@ import { TranslatePipe } from '../../services/translate.pipe';
   selector: 'app-cart',
   imports: [CommonModule, TranslatePipe],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss',
+  styleUrls: ['./cart.component.scss'], // كان فيها خطأ "styleUrl" صارت "styleUrls"
 })
 export class CartComponent {
   cartItems: any[] = [];
   total: number = 0;
+  cartItemCount: number = 0; // متغير لعدد العناصر
 
   constructor(private cartService: CartItemService) {}
 
@@ -23,7 +24,13 @@ export class CartComponent {
   loadCart(): void {
     const cartData = localStorage.getItem('cart');
     this.cartItems = cartData ? JSON.parse(cartData) : [];
+    this.updateCartData();
+  }
+
+  // تحديث البيانات: المجموع وعدد العناصر
+  updateCartData(): void {
     this.calculateTotal();
+    this.cartItemCount = this.getCartItemCount();
   }
 
   // حساب مجموع الأسعار الإجمالي
@@ -38,9 +45,13 @@ export class CartComponent {
 
   // إزالة عنصر واحد من السلة
   removeItem(index: number): void {
-    this.cartItems.splice(index, 1);
+    this.cartItems = this.cartItems.filter((_, i) => i !== index);
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
+
     this.calculateTotal();
+
+    // حدث العداد عبر الخدمة
+    this.cartService.updateCartCountFromStorage();
   }
 
   // إفراغ السلة كاملة
@@ -48,6 +59,7 @@ export class CartComponent {
     localStorage.removeItem('cart');
     this.cartItems = [];
     this.total = 0;
-    this.cartService.resetcart(); // مثلاً إذا بدك تحدث شي ثاني بالواجهة
+    this.cartItemCount = 0; // إعادة تعيين العداد
+    this.cartService.resetcart(); // تحديث آخر إذا مطلوب
   }
 }

@@ -54,9 +54,10 @@ p-toast {
   flex-direction: column;
   align-items: center;
   justify-content: center; /* يوسّط المحتوى عموديًا */
-  min-height: 85vh; /* يخلي العنصر يغطي كامل الشاشة */
+  min-height: 89vh; /* يخلي العنصر يغطي كامل الشاشة */
   background-image: url("/assets/i18n/images/back.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  margin-bottom: 30px;
 }

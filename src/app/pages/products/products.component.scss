@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  background-color: #5e1414;
+  background-image: linear-gradient(to right, #d92b2b, #5e1414, #1a1a1a);
 }
 
 .housing-card {
@@ -49,9 +49,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-h3 {
+h1 {
   color: #e9c664;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  font-size: larger;
+  font-size: 30px;
+  margin: 10px 0;
 }

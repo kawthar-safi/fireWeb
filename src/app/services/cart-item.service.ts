@@ -44,4 +44,8 @@ export class CartItemService {
     );
     this.Cartcount.next(total);
   }
+  clearCart() {
+    localStorage.removeItem('cart'); // حذف بيانات السلة بالكامل من التخزين
+    this.Cartcount.next(0); // تفريغ عدد السلة في الـ BehaviorSubject
+  }
 }

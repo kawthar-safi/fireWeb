@@ -1,12 +1,12 @@
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  height: 50px;
-  background-color: #5e1414;
+  height: 60px;
+  background-image: linear-gradient(to right, #d92b2ba9, #5e1414, #1a1a1a);
   box-shadow: 0 9px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* مهمة جدًا عشان نقدر نوسّط العنوان */
 }
 
 .logo {
@@ -14,14 +14,17 @@
   height: auto;
   margin-right: 10px;
 }
-
 .header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   color: #000000;
   text-decoration: none;
   font-size: 40px;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .header-title:hover {
@@ -30,23 +33,27 @@
 
 .ri-shopping-cart-line {
   color: #5e1414;
-  height: 40px;
+  height: 50px;
   width: 40px;
   //background-color: #e9c664;
   padding: 0%;
   margin: 0%;
+  border-radius: 20px;
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    //background-color: #e9c664;
+    color: #1a1a1a;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 5px 30px;
+    font-size: 10px;
+    margin: 5px;
+  }
 }
-.cart-count {
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  //background-color: #e9c664;
-  color: #e9c664;
-  font-weight: bold;
-  border-radius: 50%;
-  padding: 5px 30px;
-  font-size: 14px;
-}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -62,7 +69,21 @@
   transition: color 0.3s;
 }
 
-/* عند تمرير الماوس */
 .login-button:hover {
-  color: #d92b2b; /* أزرق مثلاً */
+  color: #d92b2b;
 }
+.addProduct {
+  color: #000000;
+  text-decoration: none;
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-family: "Courier New", Courier, monospace;
+}
+.addProduct:hover {
+  color: #d92b2b;
+}
+// .username {
+//   background-image: linear-gradient(to right, #150909a0, #5e1414, #1a1a1a);
+// }

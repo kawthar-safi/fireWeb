@@ -17,7 +17,6 @@ export class AuthServiceService {
     this.getUsernameFromStorage()
   );
 
-  private username: string = '';
   private redirectUrl: string = '/';
 
   // تحقق من localStorage عند بدء الخدمة (خاصة)
@@ -68,7 +67,6 @@ export class AuthServiceService {
     this.emitLoginStatus(false);
     this.emitUsername('');
     localStorage.removeItem('userId');
-    // إذا عندك حذف من السيرفر يمكن تضيفيه هنا
   }
 
   setUsername(name: string) {
@@ -76,7 +74,7 @@ export class AuthServiceService {
   }
 
   getUsernameValue(): string {
-    return this.usernameSubject.getValue();
+    return this.usernameSubject.value;
   }
 
   setRedirectUrl(url: string) {
@@ -85,5 +83,25 @@ export class AuthServiceService {
 
   getRedirectUrl(): string {
     return this.redirectUrl;
+  }
+
+  getUserRole(): string {
+    return localStorage.getItem('role') || 'user';
+  }
+
+  private roleSubject = new BehaviorSubject<string>(this.getUserRole());
+
+  getRole(): Observable<string> {
+    return this.roleSubject.asObservable();
+  }
+
+  setUserRole(role: string): void {
+    localStorage.setItem('role', role);
+    this.roleSubject.next(role);
+  }
+
+  clearRole(): void {
+    localStorage.removeItem('role');
+    this.roleSubject.next('user'); // أو ''
   }
 }

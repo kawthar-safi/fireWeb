@@ -24,11 +24,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CreateAccountComponent {
   signUp = new FormGroup({
-    firstname: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    lastname: new FormControl('', [
+    username: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
     ]),

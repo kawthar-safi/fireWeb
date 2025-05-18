@@ -26,6 +26,14 @@
   "cart": {
     "cart": "Empty Cart",
 
-    "dis": "Start shopping and add products to your cart"
+    "dis": "Start shopping and add products to your cart",
+    "active": " Order Summary ",
+    "quantity": "Quantity",
+    "price": "Price",
+    "total": "Total",
+    "numberOfItems": "Number of Items",
+    "grandTotal": "Grand Total",
+    "button": "Place Order",
+    "button2": "Remove "
   }
 }

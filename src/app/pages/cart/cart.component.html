@@ -9,24 +9,31 @@
 <button (click)="clearCart()">تم ارسال الطلب</button> -->
 <div class="page-wrapper">
   <div class="cart-container" *ngIf="cartItems.length > 0; else emptyCart">
-    <h2>سلة المشتريات</h2>
+    <h2>{{ "cart.active" | translate }}</h2>
 
     <div class="cart-items">
       <div class="cart-item" *ngFor="let item of cartItems; let i = index">
         <div class="item-info">
           <h4>{{ item.name }}</h4>
-          <p>الكمية: {{ item.quantity }}</p>
-          <p>السعر: {{ item.price | currency : "USD" }}</p>
-          <p>الإجمالي: {{ item.total | currency : "USD" }}</p>
+          <p>{{ "cart.quantity" | translate }}: {{ item.quantity }}</p>
+          <p>
+            {{ "cart.price" | translate }}: {{ item.price | currency : "USD" }}
+          </p>
+          <p>
+            {{ "cart.total" | translate }}: {{ item.total | currency : "USD" }}
+          </p>
         </div>
-        <button (click)="removeItem(i)">إزالة</button>
+        <button (click)="removeItem(i)">
+          {{ "cart.button2" | translate }}
+        </button>
       </div>
     </div>
 
     <div class="cart-summary">
-      <p>عدد العناصر: {{ getCartItemCount() }}</p>
-      <p>المجموع الكلي: {{ total | currency : "USD" }}</p>
-      <button (click)="clearCart()">إفراغ السلة</button>
+      <p>{{ "cart.numberOfItems" | translate }} : {{ cartItemCount }}</p>
+
+      <p>{{ "cart.grandTotal" | translate }}: {{ total | currency : "USD" }}</p>
+      <button (click)="clearCart()">{{ "cart.button" | translate }}</button>
     </div>
   </div>
 

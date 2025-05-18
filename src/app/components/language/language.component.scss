@@ -1,6 +1,6 @@
 .app-footer {
-  background-color: #222;
-  color: #e9c664;
+  background-image: linear-gradient(to right, #d92b2ba9, #5e1414, #1a1a1a);
+  color: #080808;
   padding: 15px 20px;
   text-align: center;
   font-family: "Courier New", monospace;
@@ -16,8 +16,8 @@
   margin: auto;
 }
 
-.lang-switch a {
-  color: #e9c664;
+.lang-switch {
+  color: #000000;
   text-decoration: none;
   margin: 0 5px;
   cursor: pointer;
@@ -25,6 +25,10 @@
   transition: color 0.3s;
 }
 
+.lang-switch:hover {
+  color: #d92b2b;
+}
+
 .lang-switch a:hover {
-  color: #fff;
+  color: #0b0b0b;
 }

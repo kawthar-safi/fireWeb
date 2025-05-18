@@ -6,14 +6,14 @@
       class="logo"
     />
 
-    <!-- 🔴 إذا المستخدم مش مسجّل دخول -->
+    <!-- إذا المستخدم مش مسجّل دخول -->
     <a *ngIf="!isLoggedIn" [routerLink]="['/login']" class="login-button">
       {{ "login.button" | translate }}
     </a>
 
-    <!-- 🟢 إذا المستخدم مسجّل دخول -->
+    <!-- إذا المستخدم مسجّل دخول -->
     <div *ngIf="isLoggedIn" class="user-info">
-      <span class="username"> 👋 {{ username }}</span>
+      <span class="username"> 👋{{ username }}</span>
       <a (click)="logout()" class="login-button">Logout</a>
     </div>
   </div>
@@ -22,11 +22,13 @@
     {{ "header.title" | translate }}
   </a>
 
-  <div class="cart-container">
-    <a (click)="gotoAddProduct()" class="login-button">Add Product</a>
-    <button (click)="goToCart()">
-      <i class="ri-shopping-cart-line"></i>
-      <span class="cart-count">{{ cartCount }}</span>
-    </button>
+  <div *ngIf="isLoggedIn" class="cart-container">
+    <a *ngIf="isAdmin" (click)="gotoAddProduct()" class="addProduct"
+      >Add Product</a
+    >
+    <a (click)="goToCart()">
+      🛒
+      <span *ngIf="isLoggedIn" class="cart-count">{{ cartCount }}</span>
+    </a>
   </div>
 </div>

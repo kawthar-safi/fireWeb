@@ -10,7 +10,7 @@ form {
   font-weight: bold;
   color: #5e1414;
   box-shadow: 0 9px 6px rgba(0, 0, 0, 0.3);
-  background-color: transparent;
+  background-color: #5e14143a;
 }
 input {
   padding: 20px;
@@ -23,16 +23,21 @@ input {
 
 input::placeholder {
   color: #000000aa;
+  font-size: 18px;
   font-weight: bold;
 }
 button {
-  padding: 10px 15px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #ff7060;
+  color: #fff;
   border: none;
-  background-color: #5e1414;
-  color: #000;
-  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f5513f;
+  }
 }
 
 button:disabled {
@@ -51,8 +56,8 @@ p-toast {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* يوسّط المحتوى عموديًا */
-  min-height: 85vh; /* يخلي العنصر يغطي كامل الشاشة */
+  justify-content: center;
+  min-height: 85vh;
   background-image: url("/assets/i18n/images/back.jpeg");
   background-size: cover;
   background-repeat: no-repeat;

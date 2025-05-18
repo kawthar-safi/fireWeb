@@ -19,7 +19,7 @@ export const authGuard: CanActivateFn = (
 ) => {
   const authService = inject(AuthServiceService);
   const router = inject(Router);
-  const id = Number(route.paramMap.get('id'));
+  const id = route.paramMap.get('id');
 
   if (!authService.isLoggedIn()) {
     authService.setRedirectUrl(state.url);

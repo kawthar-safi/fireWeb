@@ -15,15 +15,16 @@
         <span class="label">{{ "details.description" | translate }}:</span>
         <span class="value">{{ product.description }}</span>
       </p>
+      <div class="button-quintity">
+        <button class="cart-button" (click)="goToCart()">
+          {{ "details.button" | translate }}
+          <i class="ri-shopping-cart-line"></i>
+        </button>
 
-      <button class="cart-button" (click)="goToCart()">
-        {{ "details.button" | translate }}
-        <i class="ri-shopping-cart-line"></i>
-      </button>
+        <form class="quantity-form" [formGroup]="quantityForm">
+          <input type="number" formControlName="quantity" min="1" />
+        </form>
+      </div>
     </div>
-    <form [formGroup]="quantityForm">
-      <label for="quantity">الكمية:</label>
-      <input type="number" id="quantity" formControlName="quantity" min="1" />
-    </form>
   </div>
 </div>

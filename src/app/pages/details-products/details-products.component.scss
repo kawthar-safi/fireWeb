@@ -1,9 +1,8 @@
 .housing-card {
-  display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none; /* 👈 يخلي شكل الرابط أنيق */
-  background-image: url("/assets/i18n/images/back.jpeg");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,9 +10,10 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
-  max-width: 800px;
+  width: 90%; /* 👈 عرض نسبي للشاشة */
+  max-width: 600px; /* 👈 أقصى عرض */
+  padding: 6px;
   margin: 20px auto;
-  padding: 20px;
 }
 
 .housing-card:hover {
@@ -30,11 +30,13 @@
 }
 
 .housing-details {
+  margin-left: 10px;
+  margin-right: 10px;
   width: 100%;
   color: #e9c664;
   font-family: "Courier New", Courier, monospace;
   font-size: 16px;
-  display: flex;
+
   flex-direction: column;
   gap: 10px;
 }
@@ -49,19 +51,56 @@
   font-weight: bold;
 }
 
-.cart-button {
-  background-color: #e9c664;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+// .cart-button {
+//   background-color: #e9c664;
+//   color: #000;
+//   border: none;
+//   padding: 10px 20px;
+
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+//   justify-content: center;
+//   display: block;
+//   margin: 20px auto 0;
+// }
 .container {
-  background-color: black;
+  background-image: url("https://res.cloudinary.com/ddsrofo4o/image/upload/v1747396701/WhatsApp_Image_2025-05-12_at_9.54.38_PM_wn2bbh.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   width: 100%;
+
   display: flex;
   justify-content: center;
   padding: 20px 0;
+}
+.button-quintity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  button {
+    background-color: #e9c664;
+    color: #000;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  margin-bottom: 49px;
+}
+.quantity-form input[type="number"] {
+  width: 5ch; /* أو 5ch إذا بدك أكبر */
+  text-align: center;
+  padding: 4px 6px; /* قللت البادينج عشان ما يقل العرض */
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #e9c664;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  outline: none;
 }

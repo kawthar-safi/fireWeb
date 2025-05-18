@@ -33,10 +33,9 @@ export class DetailsProductsComponent {
     private cartService: CartItemService,
     private http: HttpClient
   ) {}
-
+  products: Products | null = null;
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-
+    const id = this.route.snapshot.paramMap.get('id') ?? '';
     this.productService.getproductsById(id).subscribe((data) => {
       this.product = data;
     });
@@ -49,17 +48,18 @@ export class DetailsProductsComponent {
   goToCart() {
     const quantity = this.quantityForm.value.quantity;
 
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
     const item = {
       ...this.product,
       quantity,
-      total: Number(this.product.price) * quantity, // تأكدنا إنها رقم
+      total: this.product.price * quantity,
     };
 
-    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
     cart.push(item);
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    this.cartService.incrementCartCount(quantity); // تمرير الكمية للسيرفيس
+    this.cartService.incrementCartCount(quantity); // ← نمرر الكمية المختارة
     this.router.navigate(['/cart']);
   }
 }

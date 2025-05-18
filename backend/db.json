@@ -50,11 +50,11 @@
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746901391/buck-chic_g9vz5m.png"
     },
     {
-      "id": "633f",
-      "name": "hhhhhhh",
-      "price": "777",
-      "description": "kkkkkkkkkkkkkkkkkkkkkkkkkkj",
-      "image": "jjjjjjj"
+      "id": "94f4",
+      "name": "ssss",
+      "price": 4,
+      "description": "ssssssssssssssssssssssss",
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1746901391/buck-chic_g9vz5m.png"
     }
   ],
   "users": [
@@ -62,39 +62,54 @@
       "id": "1",
       "username": "myadmin",
       "email": "admin@gmail.com",
-      "password": "admin123"
+      "password": "admin123",
+      "role": "user"
     },
     {
-      "id": "31cd",
-      "firstname": "asdfgthuj",
-      "lastname": "dfghjk",
-      "phoneNumber": 1234567,
-      "email": "sdfghjk@dfghj",
-      "password": "w3456789"
+      "id": "2",
+      "username": "myuser",
+      "email": "user@gmail.com",
+      "password": "user123",
+      "role": "admin"
     },
     {
-      "id": "5820",
-      "firstname": "asdfghj",
-      "lastname": "sdfghjkl",
-      "phoneNumber": 12345678,
-      "email": "sdfghjk@rtghyjk",
-      "password": "sdfghjl"
+      "id": "3",
+      "username": "myuser2",
+      "email": "user2@gmail.com",
+      "password": "user123",
+      "role": "admin"
     },
     {
-      "id": "b582",
-      "firstname": "dfghjk",
-      "lastname": "ertyuio",
-      "phoneNumber": 234567,
-      "email": "ertyui@tgyuio",
-      "password": "sdfghjkl"
+      "id": "4",
+      "username": "kawthar",
+      "email": "kawtharAli@gmail.com",
+      "password": "user123",
+      "role": "admin"
     },
     {
-      "id": "89aa",
+      "id": "f353",
+      "firstname": "ddddddddddd",
+      "lastname": "dddddddddd",
+      "phoneNumber": 2345678,
+      "email": "dddddd@ddddddddd",
+      "password": "sdfghjkl",
+      "role": "User"
+    },
+    {
+      "id": "a66a",
       "firstname": "kawthar",
       "lastname": "safi",
-      "phoneNumber": 782442297,
-      "email": "kawtharsafi@gmail.com",
-      "password": "1182001"
+      "phoneNumber": 12345788,
+      "email": "kawtharSafi@gmail.com",
+      "password": "12345678",
+      "role": "User"
+    },
+    {
+      "id": "8672",
+      "username": "kawthar safi",
+      "phoneNumber": 1234567890,
+      "email": "kawthar@gmail.com",
+      "password": "12345678899"
     }
   ]
 }

@@ -18,7 +18,7 @@ export class AddProductComponent {
 
   AddProducte = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    price: new FormControl(0, [Validators.required]),
+    price: new FormControl('', [Validators.required]),
     description: new FormControl('', [
       Validators.required,
       Validators.minLength(6),

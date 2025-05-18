@@ -8,3 +8,20 @@ page-wrappe {
   margin: 0;
   padding: 0;
 }
+.app-footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}
+ز.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ياخذ كل ارتفاع الشاشة */
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

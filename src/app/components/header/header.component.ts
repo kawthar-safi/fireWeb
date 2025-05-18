@@ -1,10 +1,9 @@
-import { Component, OnInit, inject, DestroyRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslatePipe } from '../../services/translate.pipe';
 import { Router, RouterModule } from '@angular/router';
 import { AuthServiceService } from '../../services/auth-service.service';
 import { CommonModule } from '@angular/common';
 import { CartItemService } from '../../services/cart-item.service';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +16,7 @@ export class HeaderComponent implements OnInit {
   username = '';
   isLoggedIn = false;
   cartCount = 0;
+  isAdmin = false;
 
   constructor(
     private router: Router,
@@ -25,17 +25,18 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // ✅ راقب عدد عناصر السلة
+    //  راقب عدد عناصر السلة
     this.cartService.cartCount$.subscribe((count) => {
       this.cartCount = count;
     });
 
-    // ✅ راقب حالة الدخول
+    // راقب حالة الدخول
     this.authService
       .getLoginStatus()
 
       .subscribe((status) => {
         this.isLoggedIn = status;
+
         if (status) {
           this.authService.getUsername().subscribe((name) => {
             this.username = name;
@@ -44,14 +45,10 @@ export class HeaderComponent implements OnInit {
           this.username = '';
         }
       });
-
-    // ✅ راقب اسم المستخدم
-    this.authService
-      .getUsername()
-
-      .subscribe((name) => {
-        this.username = name;
-      });
+    this.authService.getRole().subscribe((role) => {
+      this.isAdmin = role === 'admin';
+    });
+    this.username = localStorage.getItem('username') || '';
   }
 
   goToCart() {
@@ -64,7 +61,9 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+    this.cartService.clearCart();
     this.router.navigate(['/login']);
+    this.authService.clearRole();
   }
 
   gotoAddProduct() {

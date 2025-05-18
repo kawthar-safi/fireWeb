@@ -8,7 +8,7 @@
       name must be at least 3 characters
     </small>
 
-    <input type="price" formControlName="price" placeholder="price" />
+    <input type="number" formControlName="price" placeholder="price" />
 
     <small *ngIf="AddProducte.get('price')?.errors?.['required']"
       >price is required</small
